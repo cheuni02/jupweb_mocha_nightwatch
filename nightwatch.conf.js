@@ -12,7 +12,7 @@ module.exports = {
         // '-vv'
       ]
     },
-  
+
     test_settings: {
 
       default: {
@@ -104,7 +104,12 @@ module.exports = {
           browserName: 'firefox'
         }
       }
-    }
+    },
+
+    page_objects_path: [
+        "./page_objects"
+    ] 
+
   };
   
   

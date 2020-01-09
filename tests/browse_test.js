@@ -1,15 +1,17 @@
 module.exports = {
     tags: ['login'],
     'Check user prompted with bbc login' : function(browser) {
-        
-        const bbclogin = browser.page.bbclogin();
+
+        const bbclogin = browser.page.bbcLoginPage();
 
         bbclogin
             .navigate()
+            .waitForElementVisible('@mySubmitButton')
             .assertTitleIsCorrect()
             .setValue('@emailInput','ivan.cheung@bbc.co.uk')
-            .setValue('@passwordInput','jeric1234!')
+            .setValue('@passwordInput','amywu1234!')
             .click('@mySubmitButton');
+ 
           
     },  
     tags: ['browse'],
@@ -25,9 +27,9 @@ module.exports = {
 
     },
 
-    'Clip count should be displayed' : function(browser) {
+    // 'Clip count should be displayed' : function(browser) {
         
-    }
+    // }
 
     // 'I am on the browse page' (browser) {
     //     browser

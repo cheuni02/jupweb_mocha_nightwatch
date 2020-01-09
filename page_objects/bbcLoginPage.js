@@ -1,14 +1,23 @@
+const commands = {
+    assertTitleIsCorrect: function(expected = 'BBC Login - Log in') {
+        return this.assert.title(expected);
+    }
+};
+
 module.exports = {
-    url: 'https://test.jupiter.bbc.co.uk/',
-    commands: [
-        ],
+    url: 'https://int.jupiter.bbc.co.uk/',
+    commands: [ commands ],
     elements: {
-        numberOfResults:{
-            selector: '.components-reusable-input__container--2ZAjU',
-            locateStrategy: 'css selector'    
+        // shorthand, specifies selector
+        mySubmitButton: '.authButton',
+
+        emailInput: {
+            selector: 'input#email',
+            locateStrategy: 'css selector'
         },
-        scrollList: {
-            selector: '#scroll-list',
+
+        passwordInput: {
+            selector: 'input#password',
             locateStrategy: 'css selector'
         }
     }
